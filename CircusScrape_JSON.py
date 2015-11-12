@@ -118,12 +118,17 @@ for x in ids:
     else:
         print ("This page does not meet the element requirement of 10:", 'http://emuseum.ringling.org/emuseum/view/objects/asitem/16579/'+str(x))
 
-print (all_posters)
+    all_titles = []
+    for this_poster in all_posters:
+        all_titles.append(this_poster['title'])
+        print (all_titles)
+    
 
-print ("\n")
+#print (all_posters)
 
-with open('scraped_circusposters.json', 'w') as f:
-    f.write(json.dumps(all_posters, indent=4))
+#writes out the scraped content > dictionaries > lists > JSON file
+#with open('scraped_circusposters.json', 'w') as f:
+#    f.write(json.dumps(all_posters, indent=4))
 
     
 

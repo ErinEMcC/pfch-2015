@@ -1,0 +1,32 @@
+europeana_circus_dictionary
+	requestNumber: 999 (what is this?)
+	apikey: JQ4CNwmGL
+	itemsCount: 2 (for now)
+	totalResults: 16580
+	action: "search_json"
+	success: "true"
+	items: __LIST OF DICTIONARIES__
+		EACH_DICTIONARY_KEY(ex)
+			id: /2021603/teylers_col28_dat8371_TEY0010002588
+			completeness: 5,
+            europeanaCollectionName: 2021603_Ag_NL_DigitaleCollectie_Circusmuseum
+            index": 0,
+            edmDatasetName": 2021603_Ag_NL_DigitaleCollectie_Circusmuseum
+            provider: "Digitale Collectie"
+            title: "Circus Schumann. Jenny en Piccolo"
+            previewNoDistribute: "false"
+			dataProvide: "Circus Museum"
+            rights: "http://creativecommons.org/licenses/by-sa/3.0/nl/"
+            edmIsShownAt: www.LINK TO MUSEUM SITE
+            edmPreview: www.LINK TO THUMBNAIL
+            score: 1.0
+            timestamp: 1434111662432,
+            language: "nl"
+            type": "IMAGE",
+            optedOut: false,
+            guid: www. LINK TO CATALOG FILE (IMG and DATA)
+            link: www. LINK TO MY QUERY CODE 
+            timestamp_created_epoch: 1422373294461,
+            timestamp_update_epoch: 1434112012935,
+            timestamp_created: "2015-01-27T15:41:34.461Z",
+            timestamp_update: "2015-06-12T12:26:52.935Z"
