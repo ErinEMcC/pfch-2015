@@ -10,18 +10,33 @@ with open('scraped_circusposters.json') as json_data:
      ##PRETTY PRINTING TO CHECK SITUATION
      ##pprint.pprint(data)
 
-    ## gets all key values in list of dictionaries when key = title
-     for i in (data):
-         titles = (i['title'])
+poster_troupes = {}
+all_troupes = []
 
-         ## regex for content before a colon ^[^:]+\s*
-         ## 90% of the archive this is troupe name
-         troupes = re.findall('^[^:]+\s*', titles)
-         print (troupes)
+     ## gets all key values in list of dictionaries when key = title
+for row in (data):
+    titles = (row['title'])
 
-         ## writes results back into separate json file        
-         with open ('troupes.json', 'w') as f:
-             f.write(json.dumps(troupes, indent=4))
+    ## regex for content before a colon ^[^:]+\s*
+    ## in ~95% of the archive this is troupe name
+    troupes = re.findall('^[^:]+\s*', titles)
+
+    #add troupes (with duplicates) to the list        
+    all_troupes.append(troupes)
+
+    for a_troupe in all_troupes:
+        if a_troupe not in poster_troupes:
+            poster_troupes[a_troupe] = 0
+        poster_troupes[a_troupe] = poster_troupes[a_troupe] +1
+
+pprint.pprint (poster_troupes)
+
+
+         
+
+## writes results back into separate json file        
+##with open ('troupes.json', 'w') as f:
+##    f.write(json.dumps(all_troupes, indent=4))
 
          
          
