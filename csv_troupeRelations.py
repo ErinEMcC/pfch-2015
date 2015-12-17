@@ -1,9 +1,11 @@
 import csv
+import pprint
 
 with open ('troupes_coreferenced.csv', newline='') as csvfile:
         troupe_reader = csv.reader(csvfile, delimiter=',', quotechar='|')
 
-        troupLookup = {}
+        #create a new dictionary to store all the troupe relation pairs and their counts/weights
+        troupePairs = {}
 
         for row in troupe_reader:
                 all_combos = []
@@ -13,7 +15,9 @@ with open ('troupes_coreferenced.csv', newline='') as csvfile:
                                         if len(row[x]) > 0 and len(row[y]) > 0:
                                                 all_combos.append(row[x] + "|" + row[y])
 
-		for a_combo in all_combos:
-                        if a_combo not in troupLookup:
-                                troupLookup[combo] = 0
-                                troupLookup[combo] = troupLookup[combo] + 1
+                for a_combo in all_combos:
+                        if a_combo not in troupePairs:
+                                troupePairs[a_combo] = 0
+                        troupePairs[a_combo] = troupePairs[a_combo] + 1
+
+        pprint.pprint (troupePairs)
